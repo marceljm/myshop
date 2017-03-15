@@ -9,4 +9,6 @@ public interface ProductService {
 
 	Map<String, List<Product>> getCategoryProductMap();
 
+	String getLink(String main, String sub, String third);
+
 }

@@ -5,12 +5,12 @@
 
 	<url-mapping id="products2nd">
 		<pattern value="/#{main}/#{sub}/produtos/" />
-		<view-id value="/content.xhtml" />
+		<view-id value="/products.xhtml" />
 	</url-mapping>
 
 	<url-mapping id="products3rd">
 		<pattern value="/#{main}/#{sub}/#{third}/produtos/" />
-		<view-id value="/content.xhtml" />
+		<view-id value="/products.xhtml" />
 	</url-mapping>
 
 	<url-mapping id="firstLevel">

@@ -30,6 +30,7 @@ public class ProductDAOImpl implements ProductDAO {
 				if (categoryProductMap.get(field[7]) == null) {
 					List<Product> productList = new ArrayList<Product>();
 					productList.add(new Product(line));
+					categoryProductMap.put(field[7], productList);
 					continue;
 				}
 				categoryProductMap.get(field[7]).add(new Product(line));

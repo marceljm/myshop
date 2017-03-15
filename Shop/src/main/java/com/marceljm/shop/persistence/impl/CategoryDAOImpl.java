@@ -77,10 +77,10 @@ public class CategoryDAOImpl implements CategoryDAO {
 		if (field.length < 2)
 			return;
 
-		String link = Util.linkfy(field[0]).concat("/").concat(Util.linkfy(field[1])).concat("/");
+		String link = Util.linkfy(field[0]).concat("/").concat(Util.linkfy(field[1]));
 
 		if (field.length == 3)
-			link = link.concat(field[2]).concat("/");
+			link = link.concat("/").concat(Util.linkfy(field[2]));
 
 		linkCategoryMap.put(link, id);
 	}

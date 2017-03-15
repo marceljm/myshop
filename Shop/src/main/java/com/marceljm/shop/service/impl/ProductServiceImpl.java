@@ -22,4 +22,10 @@ public class ProductServiceImpl implements ProductService {
 		return productDAO.categoryProductMap();
 	}
 
+	@Override
+	public String getLink(String main, String sub, String third) {
+		String link = main.concat("/").concat(sub);
+		return third.isEmpty() ? link : link.concat("/").concat(third);
+	}
+
 }

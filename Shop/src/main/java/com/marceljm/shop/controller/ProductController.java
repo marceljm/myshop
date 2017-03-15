@@ -30,7 +30,8 @@ public class ProductController {
 		categoryProductMap = productService.getCategoryProductMap();
 	}
 
-	public List<Product> productList(String link) {
+	public List<Product> productList(String main, String sub, String third) {
+		String link = productService.getLink(main, sub, third);
 		String category = categoryService.getLinkCategoryMap().get(link);
 		return categoryProductMap.get(category);
 	}
