@@ -18,11 +18,24 @@ public class Util {
 		return text;
 	}
 
+	private static String removeDoubleSpace(String text) {
+		while (text.contains("  "))
+			text = text.replace("  ", " ");
+		return text;
+	}
+
 	public static String linkfy(String text) {
 		text = text.toLowerCase().trim();
 		text = normalize(text);
 		text = alphaNumeric(text);
 		text = text.replace(" ", "-");
 		return removeDoubleHyphen(text);
+	}
+
+	public static String simplify(String text) {
+		text = text.toLowerCase().trim();
+		text = normalize(text);
+		text = alphaNumeric(text);
+		return removeDoubleSpace(text);
 	}
 }

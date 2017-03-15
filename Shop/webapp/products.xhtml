@@ -25,6 +25,7 @@
 			widgetVar="productTable" emptyMessage="Nenhum produto encontrado"
 			paginator="true" rows="10"
 			filteredValue="#{filterController.filteredList}">
+
 			<f:facet name="header">
 				<p:outputPanel>
 					<p:outputLabel value="Shop"></p:outputLabel>
@@ -38,7 +39,8 @@
 			</p:column>
 
 			<p:column headerText="Nome" filterBy="#{product.name}"
-				footerText="contains" filterMatchMode="contains"
+				footerText="contains"
+				filterFunction="#{filterController.customFilter}"
 				style="text-align: center">
 				<a href="#{product.link}" style="text-decoration: none !important">
 					<h:outputText value="#{product.name}" style="color: #00a6dd" />
