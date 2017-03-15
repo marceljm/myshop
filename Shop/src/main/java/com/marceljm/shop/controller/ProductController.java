@@ -41,4 +41,7 @@ public class ProductController {
 		return Util.linkfy(name).concat("/").concat(category).concat("/").concat(index);
 	}
 
+	public Product product(String category, String index) {
+		return categoryProductMap.get(category).get(Integer.parseInt(index));
+	}
 }
