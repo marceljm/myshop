@@ -1,7 +1,6 @@
 package com.marceljm.shop.entity;
 
 import java.text.DecimalFormat;
-import java.text.Normalizer;
 
 public class Product {
 
@@ -13,6 +12,7 @@ public class Product {
 	private String image;
 	private String link;
 	private String category;
+	private String index;
 
 	public Product(String line) {
 		String field[] = line.split(";");
@@ -24,6 +24,7 @@ public class Product {
 		this.image = field[5];
 		this.link = field[6];
 		this.category = field[7];
+		this.index = field[8];
 	}
 
 	public String getProgramId() {
@@ -93,6 +94,14 @@ public class Product {
 
 	public void setLink(String link) {
 		this.link = link;
+	}
+
+	public String getIndex() {
+		return index;
+	}
+
+	public void setIndex(String index) {
+		this.index = index;
 	}
 
 	@Override

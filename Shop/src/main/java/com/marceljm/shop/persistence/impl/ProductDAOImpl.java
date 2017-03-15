@@ -25,15 +25,21 @@ public class ProductDAOImpl implements ProductDAO {
 			BufferedReader bf = new BufferedReader(new InputStreamReader(new FileInputStream(FILE), "UTF8"));
 			String line;
 			Map<String, List<Product>> categoryProductMap = new HashMap<String, List<Product>>();
+			Map<String, Integer> categoryIndexMap = new HashMap<String, Integer>();
 			while ((line = bf.readLine()) != null) {
 				String[] field = line.split(";");
 				if (categoryProductMap.get(field[7]) == null) {
 					List<Product> productList = new ArrayList<Product>();
+					line = line.concat(";0");
 					productList.add(new Product(line));
 					categoryProductMap.put(field[7], productList);
+					categoryIndexMap.put(field[7], 0);
 					continue;
 				}
+				int nextIndex = categoryIndexMap.get(field[7]) + 1;
+				line = line.concat(";").concat(String.valueOf(nextIndex));
 				categoryProductMap.get(field[7]).add(new Product(line));
+				categoryIndexMap.put(field[7], nextIndex);
 			}
 			bf.close();
 			return categoryProductMap;
