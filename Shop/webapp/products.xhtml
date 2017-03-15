@@ -33,8 +33,10 @@
 			</f:facet>
 
 			<p:column style="text-align: center; background-color: white">
-				<a href="#{product.link}"> <p:graphicImage
-						url="#{product.image}" height="150" alt="#{product.name}"></p:graphicImage>
+				<a
+					href="/Shop/#{productController.linkfy(product.name, product.category, product.index)}/">
+					<p:graphicImage url="#{product.image}" height="150"
+						alt="#{product.name}"></p:graphicImage>
 				</a>
 			</p:column>
 
