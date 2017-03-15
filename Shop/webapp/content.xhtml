@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:body>
+	<h:form>
+		<p:dataTable var="product" value="#{importController.productList}"
+			widgetVar="productTable" emptyMessage="Nenhum produto encontrado"
+			paginator="true" rows="10"
+			filteredValue="#{filterController.filteredList}">
+			<f:facet name="header">
+				<p:outputPanel>
+					<p:outputLabel value="Shop"></p:outputLabel>
+				</p:outputPanel>
+			</f:facet>
+
+			<p:column style="text-align: center; background-color: white">
+				<a href="#{product.link}"> <p:graphicImage
+						url="#{product.image}" height="150" alt="#{product.name}"></p:graphicImage>
+				</a>
+			</p:column>
+
+			<p:column headerText="Nome" filterBy="#{product.name}"
+				footerText="contains" filterMatchMode="contains"
+				style="text-align: center">
+				<a href="#{product.link}" style="text-decoration: none !important">
+					<h:outputText value="#{product.name}" style="color: #00a6dd" />
+				</a>
+			</p:column>
+
+			<p:column headerText="Preço" sortBy="#{product.price}"
+				style="text-align: center">
+				<h:outputText value="#{product.formattedPrice}"
+					style="color:#9fca3b" />
+			</p:column>
+
+			<p:column headerText="Marca" filterBy="#{product.brand}"
+				footerText="contains" filterMatchMode="contains"
+				style="text-align: center">
+				<h:outputText value="#{product.brand}" style="color: grey" />
+			</p:column>
+
+			<p:column headerText="Categoria" style="text-align: center">
+				<h:outputText value="#{product.category}" />
+			</p:column>
+		</p:dataTable>
+	</h:form>
+</h:body>
+</html>
