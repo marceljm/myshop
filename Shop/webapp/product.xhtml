@@ -17,38 +17,40 @@
 		type="text/css" charset="utf-8" />
 </h:head>
 
-<h:body style="vertical-align: middle !important">
-	<h:form>
-		<ui:param name="product"
-			value="#{productController.product(category, index)}" />
+<h:body>
+	<center>
+		<h:form>
+			<ui:param name="product"
+				value="#{productController.product(category, index)}" />
 
+			<p:panelGrid columns="3" style="width:100%; text-align: center"
+				columnClasses="one-third,one-third,one-third">
 
-		<p:fieldset legend="#{product.category}"
-			style="margin-bottom:20px; text-align: center">
-			<p:outputLabel>
-				<h1 style="color: #00a6dd;">#{product.name}</h1>
-			</p:outputLabel>
-			<h:panelGrid columns="2" cellpadding="15" width="100%">
 				<p:graphicImage url="#{product.image}" alt="#{product.name}" />
 
-				<h:panelGrid columns="1">
-					<p:outputLabel>
-						<h2 style="color: #9fca3b">#{product.formattedPrice}</h2>
-					</p:outputLabel>
-					<p:outputLabel>
-						<h2 style="color: grey">#{product.brand}</h2>
-					</p:outputLabel>
-					<p:outputLabel>
-						<h2>#{product.programId}</h2>
-					</p:outputLabel>
-					<p:link href="#{product.link}"
-						style="text-decoration: none !important;" class="button">
-						<h2 style="color: white">Ir à loja</h2>
-					</p:link>
-				</h:panelGrid>
+				<p:outputLabel>
+					<h1 style="color: #00a6dd;">#{product.name}</h1>
+				</p:outputLabel>
 
-			</h:panelGrid>
-		</p:fieldset>
-	</h:form>
+				<p:outputLabel>
+					<h2 style="color: #9fca3b">#{product.formattedPrice}</h2>
+				</p:outputLabel>
+
+				<p:outputLabel>
+					<h2 style="color: grey">#{product.brand}</h2>
+				</p:outputLabel>
+
+				<p:outputLabel>
+					<h2>#{product.programId}</h2>
+				</p:outputLabel>
+
+				<p:link href="#{product.link}"
+					style="text-decoration: none !important; background-color:black"
+					class="button">
+					<h2 style="color: white">Ir à loja</h2>
+				</p:link>
+			</p:panelGrid>
+		</h:form>
+	</center>
 </h:body>
 </html>
