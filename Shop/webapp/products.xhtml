@@ -17,7 +17,12 @@
 		type="text/css" charset="utf-8" />
 </h:head>
 
-<h:body>
+<h:body style="margin:0; padding:0;">
+	<div class="ui-grid ui-grid-responsive"
+		style="background-color: black; height: 80px; background-repeat: no-repeat; background-size: 100% 100%;">
+		<ui:include src="header.xhtml" />
+	</div>
+
 	<h:form>
 		<h:outputLabel value="#{link}" />
 		<p:dataTable var="product"
@@ -35,8 +40,8 @@
 			<p:column style="text-align: center; background-color: white">
 				<a
 					href="/Shop/#{productController.linkfy(product.name, product.category, product.index)}/">
-					<p:graphicImage url="#{product.image}" height="150"
-						alt="#{product.name}"></p:graphicImage>
+					<p:graphicImage url="#{product.image}"
+						style="width:100%; max-width:150px" alt="#{product.name}"></p:graphicImage>
 				</a>
 			</p:column>
 
@@ -57,14 +62,15 @@
 			</p:column>
 
 			<p:column headerText="Marca" filterBy="#{product.brand}"
-				footerText="Marca" filterFunction="#{filterController.customFilter}"
+				footerText="Marca" priority="2"
+				filterFunction="#{filterController.customFilter}"
 				style="text-align: center">
 				<h:outputText value="#{product.brand}" style="color: grey" />
 			</p:column>
 
 			<p:column headerText="Loja"
 				style="text-align: center; background-color: white"
-				footerText="Loja">
+				footerText="Loja" priority="2">
 				<a href="#{product.link}"> <p:graphicImage
 						url="/resources/images/store/#{product.programId}.png"></p:graphicImage>
 				</a>
