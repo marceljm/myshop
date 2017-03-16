@@ -12,7 +12,7 @@ import com.marceljm.shop.entity.Product;
 import com.marceljm.shop.service.FilterService;
 
 @Controller
-@Scope("session")
+@Scope("request")
 public class FilterController {
 
 	@Inject
