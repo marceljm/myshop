@@ -41,29 +41,33 @@
 			</p:column>
 
 			<p:column headerText="Nome" filterBy="#{product.name}"
-				footerText="contains"
-				filterFunction="#{filterController.customFilter}"
+				footerText="Nome" filterFunction="#{filterController.customFilter}"
 				style="text-align: center">
-				<a href="#{product.link}" style="text-decoration: none !important">
-					<h:outputText value="#{product.name}" style="color: #00a6dd" />
+				<a
+					href="/Shop/#{productController.linkfy(product.name, product.category, product.index)}/"
+					style="text-decoration: none !important"> <h:outputText
+						value="#{product.name}" style="color: #00a6dd" />
 				</a>
 			</p:column>
 
-			<p:column headerText="Preço" style="text-align: center">
+			<p:column headerText="Preço" style="text-align: center"
+				footerText="Preço">
 				<h:outputText value="#{product.formattedPrice}"
 					style="color:#9fca3b" />
 			</p:column>
 
 			<p:column headerText="Marca" filterBy="#{product.brand}"
-				footerText="contains" filterMatchMode="contains"
+				footerText="Marca" filterFunction="#{filterController.customFilter}"
 				style="text-align: center">
 				<h:outputText value="#{product.brand}" style="color: grey" />
 			</p:column>
 
-			<p:column headerText="Categoria" style="text-align: center">
-				<h:outputText value="#{product.category}" />
-				<br />
-				<h:outputText value="#{product.index}" />
+			<p:column headerText="Loja"
+				style="text-align: center; background-color: white"
+				footerText="Loja">
+				<a href="#{product.link}"> <p:graphicImage
+						url="/resources/images/store/#{product.programId}.png"></p:graphicImage>
+				</a>
 			</p:column>
 		</p:dataTable>
 	</h:form>
