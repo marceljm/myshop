@@ -29,14 +29,12 @@
 				value="#{productController.product(category, index)}" />
 
 
-			<div class="ui-g">
-				<div class="ui-g-12 ui-md-4 ui-lg-4">
-					<p:panel style="height: 270px">
+			<p:panel style="height: 270px">
+				<div class="ui-g">
+					<div class="ui-g-12 ui-md-4 ui-lg-4">
 						<p:graphicImage url="#{product.image}" alt="#{product.name}" />
-					</p:panel>
-				</div>
-				<div class="ui-g-12 ui-md-8 ui-lg-8">
-					<p:panel style="height: 270px">
+					</div>
+					<div class="ui-g-12 ui-md-8 ui-lg-8">
 						<div class="ui-g" style="padding: 15px">
 							<div class="ui-g-12 ui-md-12 ui-lg-12">
 								<p:outputLabel>
@@ -68,9 +66,9 @@
 								</p:link>
 							</div>
 						</div>
-					</p:panel>
+					</div>
 				</div>
-			</div>
+			</p:panel>
 
 		</h:form>
 	</center>
