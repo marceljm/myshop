@@ -23,7 +23,7 @@
 		<p:dataTable var="product"
 			value="#{productController.productList(main, sub, third)}"
 			widgetVar="productTable" emptyMessage="Nenhum produto encontrado"
-			paginator="true" rows="10"
+			paginator="true" rows="100"
 			filteredValue="#{filterController.filteredList}">
 
 			<f:facet name="header">
@@ -49,8 +49,7 @@
 				</a>
 			</p:column>
 
-			<p:column headerText="Preço" sortBy="#{product.price}"
-				style="text-align: center">
+			<p:column headerText="Preço" style="text-align: center">
 				<h:outputText value="#{product.formattedPrice}"
 					style="color:#9fca3b" />
 			</p:column>

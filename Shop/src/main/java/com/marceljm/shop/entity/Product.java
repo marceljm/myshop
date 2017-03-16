@@ -24,7 +24,6 @@ public class Product {
 		this.image = field[5];
 		this.link = field[6];
 		this.category = field[7];
-		this.index = field[8];
 	}
 
 	public String getProgramId() {
