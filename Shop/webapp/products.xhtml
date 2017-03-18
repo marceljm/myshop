@@ -50,7 +50,7 @@
 				style="text-align: center">
 				<a
 					href="/Shop/#{productController.linkfy(product.name, product.category, product.index)}/"
-					style="text-decoration: none !important"> <h:outputText
+					target="_blank" style="text-decoration: none !important"> <h:outputText
 						value="#{product.name}" style="color: #00a6dd" />
 				</a>
 			</p:column>
@@ -72,7 +72,7 @@
 				style="text-align: center; background-color: white"
 				footerText="Loja" priority="2">
 				<a href="#{product.link}"> <p:graphicImage
-						url="/resources/images/store/#{product.programId}.png"></p:graphicImage>
+						url="https://darwin.affiliatewindow.com/images/upload/zanox/merchant/profile/#{product.programId}.png?1393598179"></p:graphicImage>
 				</a>
 			</p:column>
 		</p:dataTable>

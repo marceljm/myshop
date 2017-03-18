@@ -11,19 +11,22 @@ public class Product {
 	private String brand;
 	private String image;
 	private String link;
-	private String category;
+	private String ean;
 	private String index;
+	private String category;
 
-	public Product(String line) {
-		String field[] = line.split(";");
+	public Product(String line, String category) {
+		String field[] = line.split("<");
 		this.programId = field[0];
 		this.zupid = field[1];
 		this.name = field[2];
 		this.price = Float.parseFloat(field[3]);
 		this.brand = field[4];
 		this.image = field[5];
-		this.link = field[6];
-		this.category = field[7];
+//		this.link = field[6];
+		if (field.length > 7)
+			this.ean = field[7];
+		this.category = category;
 	}
 
 	public String getProgramId() {
@@ -78,12 +81,12 @@ public class Product {
 		this.brand = brand;
 	}
 
-	public String getCategory() {
-		return category;
+	public String getEan() {
+		return ean;
 	}
 
-	public void setCategory(String category) {
-		this.category = category;
+	public void setEan(String ean) {
+		this.ean = ean;
 	}
 
 	public String getLink() {
@@ -101,6 +104,14 @@ public class Product {
 
 	public void setIndex(String index) {
 		this.index = index;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
 	@Override

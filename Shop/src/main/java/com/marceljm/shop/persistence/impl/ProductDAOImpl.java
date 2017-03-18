@@ -20,6 +20,7 @@ import com.marceljm.shop.persistence.ProductDAO;
 public class ProductDAOImpl implements ProductDAO {
 
 	private String FILE = "C:\\CSV\\shop.csv";
+	private String PRODUCT_CATEGORY_FILE = "C:\\CSV\\productCategoryMap.csv";
 
 	@Override
 	public Map<String, List<Product>> categoryProductMap() {
@@ -27,15 +28,18 @@ public class ProductDAOImpl implements ProductDAO {
 			BufferedReader bf = new BufferedReader(new InputStreamReader(new FileInputStream(FILE), "UTF8"));
 			String line;
 			Map<String, List<Product>> categoryProductMap = new HashMap<String, List<Product>>();
+			Map<String, String> zupidCateoryMap = zupidCategoryMap();
 			while ((line = bf.readLine()) != null) {
-				String[] field = line.split(";");
-				if (categoryProductMap.get(field[7]) == null) {
+				String[] field = line.split("<");
+				String zupid = field[1];
+				String category = zupidCateoryMap.get(zupid);
+				if (categoryProductMap.get(category) == null) {
 					List<Product> productList = new ArrayList<Product>();
-					productList.add(new Product(line));
-					categoryProductMap.put(field[7], productList);
+					productList.add(new Product(line, category));
+					categoryProductMap.put(category, productList);
 					continue;
 				}
-				categoryProductMap.get(field[7]).add(new Product(line));
+				categoryProductMap.get(category).add(new Product(line, category));
 			}
 			bf.close();
 			sortLists(categoryProductMap);
@@ -61,5 +65,25 @@ public class ProductDAOImpl implements ProductDAO {
 			for (Product product : entry.getValue())
 				product.setIndex(String.valueOf(index++));
 		}
+	}
+
+	private Map<String, String> zupidCategoryMap() {
+		try {
+			BufferedReader bf = new BufferedReader(
+					new InputStreamReader(new FileInputStream(PRODUCT_CATEGORY_FILE), "UTF8"));
+			String line;
+			Map<String, String> zupidCategoryMap = new HashMap<String, String>();
+			while ((line = bf.readLine()) != null) {
+				String[] field = line.split(";");
+				String zupid = field[0];
+				String category = field[1];
+				zupidCategoryMap.put(zupid, category);
+			}
+			bf.close();
+			return zupidCategoryMap;
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 }
