@@ -31,4 +31,8 @@ public class FilterController {
 	public boolean customFilter(Object value, Object filter, Locale locale) {
 		return filterService.customFilter(value, filter, locale);
 	}
+
+	public void reset() {
+		filteredList = null;
+	}
 }

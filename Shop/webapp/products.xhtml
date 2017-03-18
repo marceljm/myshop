@@ -15,6 +15,12 @@
 	<title>#{main} #{sub} #{third}</title>
 	<link rel="stylesheet" href="/Shop/resources/css/style.css"
 		type="text/css" charset="utf-8" />
+
+	<script>
+		$(window).bind('beforeunload', function() {
+			rcForm();
+		});
+	</script>
 </h:head>
 
 <h:body style="margin:0; padding:0;">
@@ -23,7 +29,7 @@
 		<ui:include src="header.xhtml" />
 	</div>
 
-	<h:form>
+	<h:form id="form">
 		<h:outputLabel value="#{link}" />
 		<p:dataTable var="product"
 			value="#{productController.productList(main, sub, third)}"
@@ -77,6 +83,9 @@
 				</a>
 			</p:column>
 		</p:dataTable>
+
+		<p:remoteCommand name="rcForm" update="form"
+			actionListener="#{filterController.reset()}" />
 	</h:form>
 </h:body>
 </html>
