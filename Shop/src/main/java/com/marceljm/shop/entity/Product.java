@@ -23,7 +23,7 @@ public class Product {
 		this.price = Float.parseFloat(field[3]);
 		this.brand = field[4];
 		this.image = field[5];
-//		this.link = field[6];
+		this.link = field[6];
 		if (field.length > 7)
 			this.ean = field[7];
 		this.category = category;
@@ -66,7 +66,9 @@ public class Product {
 	}
 
 	public String getImage() {
-		return "https://static.wmobjects.com.br/imgres/arquivos/ids/" + image + "-250-250";
+		if (programId.equals("12011"))
+			return "https://static.wmobjects.com.br/imgres/arquivos/ids/" + image + "-250-250";
+		return image;
 	}
 
 	public void setImage(String image) {
@@ -90,8 +92,10 @@ public class Product {
 	}
 
 	public String getLink() {
-		return "http://ad.zanox.com/ppc/?38441474C295166823&ULP=[[" + link
-				+ "/sk?utm_medium=afiliados&utm_source=zanox&utm_campaign=xml_zanox&utm_term=zanox]]";
+		if (programId.equals("12011"))
+			return "http://ad.zanox.com/ppc/?38441474C295166823&ULP=[[" + link
+					+ "/sk?utm_medium=afiliados&utm_source=zanox&utm_campaign=xml_zanox&utm_term=zanox]]";
+		return link;
 	}
 
 	public void setLink(String link) {

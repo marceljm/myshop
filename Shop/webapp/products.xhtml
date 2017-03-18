@@ -28,7 +28,7 @@
 		<p:dataTable var="product"
 			value="#{productController.productList(main, sub, third)}"
 			widgetVar="productTable" emptyMessage="Nenhum produto encontrado"
-			paginator="true" rows="100"
+			paginator="true" rows="25"
 			filteredValue="#{filterController.filteredList}">
 
 			<f:facet name="header">
@@ -39,8 +39,8 @@
 
 			<p:column style="text-align: center; background-color: white">
 				<a
-					href="/Shop/#{productController.linkfy(product.name, product.category, product.index)}/">
-					<p:graphicImage url="#{product.image}"
+					href="/Shop/#{productController.linkfy(product.name, product.category, product.index)}/"
+					target="_blank"> <p:graphicImage url="#{product.image}"
 						style="width:100%; max-width:150px" alt="#{product.name}"></p:graphicImage>
 				</a>
 			</p:column>
@@ -71,8 +71,9 @@
 			<p:column headerText="Loja"
 				style="text-align: center; background-color: white"
 				footerText="Loja" priority="2">
-				<a href="#{product.link}"> <p:graphicImage
-						url="https://darwin.affiliatewindow.com/images/upload/zanox/merchant/profile/#{product.programId}.png?1393598179"></p:graphicImage>
+				<a href="#{product.link}" target="_blank"> <p:graphicImage
+						url="https://darwin.affiliatewindow.com/images/upload/zanox/merchant/profile/#{product.programId}.png?1393598179"
+						style="height:60px"></p:graphicImage>
 				</a>
 			</p:column>
 		</p:dataTable>
