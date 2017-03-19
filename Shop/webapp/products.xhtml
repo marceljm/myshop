@@ -34,7 +34,7 @@
 		<p:dataTable var="product"
 			value="#{productController.productList(main, sub, third)}"
 			widgetVar="productTable" emptyMessage="Nenhum produto encontrado"
-			paginator="true" rows="25"
+			paginator="true" rows="100"
 			filteredValue="#{filterController.filteredList}">
 
 			<f:facet name="header">
@@ -79,7 +79,7 @@
 				footerText="Loja" priority="2">
 				<a href="#{product.link}" target="_blank"> <p:graphicImage
 						url="https://darwin.affiliatewindow.com/images/upload/zanox/merchant/profile/#{product.programId}.png?1393598179"
-						style="height:60px"></p:graphicImage>
+						style="width:120px"></p:graphicImage>
 				</a>
 			</p:column>
 		</p:dataTable>
