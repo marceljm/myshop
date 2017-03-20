@@ -34,7 +34,7 @@
 		<p:dataTable var="product"
 			value="#{productController.productList(main, sub, third)}"
 			widgetVar="productTable" emptyMessage="Nenhum produto encontrado"
-			paginator="true" rows="100"
+			paginator="true" rows="50"
 			filteredValue="#{filterController.filteredList}">
 
 			<f:facet name="header">
@@ -47,7 +47,7 @@
 				<a
 					href="/Shop/#{productController.linkfy(product.name, product.category, product.index)}/"
 					target="_blank"> <p:graphicImage url="#{product.image}"
-						style="width:100%; max-width:150px" alt="#{product.name}"></p:graphicImage>
+						style="height:150px" alt="#{product.name}"></p:graphicImage>
 				</a>
 			</p:column>
 

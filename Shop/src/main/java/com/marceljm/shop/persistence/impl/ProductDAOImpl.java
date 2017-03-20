@@ -20,7 +20,7 @@ import com.marceljm.shop.persistence.ProductDAO;
 public class ProductDAOImpl implements ProductDAO {
 
 	private String FILE = "C:\\CSV\\shop.csv";
-	private String PRODUCT_CATEGORY_FILE = "C:\\CSV\\productCategoryMap.csv";
+	private String PRODUCT_CATEGORY_FILE = "C:\\CSV\\zupidCategoryMap.csv";
 
 	@Override
 	public Map<String, List<Product>> categoryProductMap() {
