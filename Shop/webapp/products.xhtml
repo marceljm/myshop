@@ -39,20 +39,23 @@
 
 			<f:facet name="header">
 				<p:outputPanel>
-					<p:outputLabel value="Shop"></p:outputLabel>
+					<p:outputLabel value=""></p:outputLabel>
 				</p:outputPanel>
 			</f:facet>
 
-			<p:column style="text-align: center; background-color: white">
+			<p:column style="
+						text-align: center; background-color:white">
 				<a
 					href="/Shop/#{productController.linkfy(product.name, product.category, product.index)}/"
-					target="_blank"> <p:graphicImage url="#{product.image}"
-						style="height:150px" alt="#{product.name}"></p:graphicImage>
+					target="_blank"> <img src="#{product.image}"
+					style="height: 150px" alt="#{product.name}"
+					onerror="this.src='/Shop/resources/images/no-image.png'" />
 				</a>
 			</p:column>
 
-			<p:column headerText="Nome" filterBy="#{product.name}"
-				footerText="Nome" filterFunction="#{filterController.customFilter}"
+			<p:column headerText="Características do Produto"
+				filterBy="#{product.name}" footerText="Nome"
+				filterFunction="#{filterController.customFilter}"
 				style="text-align: center">
 				<a
 					href="/Shop/#{productController.linkfy(product.name, product.category, product.index)}/"
@@ -67,9 +70,7 @@
 					style="color:#9fca3b" />
 			</p:column>
 
-			<p:column headerText="Marca" filterBy="#{product.brand}"
-				footerText="Marca" priority="2"
-				filterFunction="#{filterController.customFilter}"
+			<p:column headerText="Marca" footerText="Marca" priority="2"
 				style="text-align: center">
 				<h:outputText value="#{product.brand}" style="color: grey" />
 			</p:column>
