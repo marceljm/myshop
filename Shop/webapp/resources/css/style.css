@@ -64,3 +64,14 @@
 .ui-panelgrid .ui-panelgrid-cell {
 	border-width: 1px;
 }
+
+.ui-widget-header {
+	font-weight: normal;
+	position: relative;
+	top: -4px;
+	box-shadow: 1px 1px 1px #888888;
+}
+
+.ui-datatable .ui-column-filter {
+	width: 90%;
+}
