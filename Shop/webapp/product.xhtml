@@ -27,28 +27,29 @@
 
 			<p:panel>
 				<div class="ui-g">
-					<div class="ui-g-12 ui-md-4 ui-lg-4">
-						<p:panel
-							style="text-align: center; height: 500px; background-image:url('/Shop/resources/images/t1.png'); background-size: 100% 500px; background-position: 0px 0px; background-repeat: no-repeat">
-							<img src="#{product.image}"
-								style="height: 250px; max-width: 250px; position: relative; top: 65px; left: -35px"
-								alt="#{product.name}"
-								onerror="this.src='/Shop/resources/images/no-image.png'" />
-						</p:panel>
-					</div>
 					<div class="ui-g-12 ui-md-8 ui-lg-8">
 						<div class="ui-g" style="padding: 0px">
-							<div class="ui-g-12 ui-md-12 ui-lg-12">
-								<p:panel style="text-align: center">
+							<div class="ui-g-12 ui-md-6 ui-lg-6">
+								<p:panel
+									style="height: 275px;text-align: center; background-image:url('/Shop/resources/images/t2.png'); background-size: 100% 100%; background-position: 0px 0px; background-repeat: no-repeat">
 									<f:facet name="header">Produto</f:facet>
 									<p:outputLabel>
-										<h1 style="color: #00a6dd;">#{product.name}</h1>
+										<h3
+											style="color: black; font-weight: bold; font-style: italic; position: relative; left: 40%; width: 60%">#{product.name}</h3>
 									</p:outputLabel>
+								</p:panel>
+							</div>
+							<div class="ui-g-12 ui-md-6 ui-lg-6">
+								<p:panel style="text-align: center; height: 275px">
+									<img src="#{product.image}"
+										style="height: 250px; max-width: 250px; position: relative"
+										alt="#{product.name}"
+										onerror="this.src='/Shop/resources/images/no-image.png'" />
 								</p:panel>
 							</div>
 						</div>
 						<div class="ui-g" style="padding: 0px">
-							<div class="ui-g-12 ui-md-6 ui-lg-4">
+							<div class="ui-g-12 ui-md-6 ui-lg-3">
 								<p:panel
 									style="height: 150px; text-align: center; background-image:url('/Shop/resources/images/t1.png'); background-size: 100% 165px; background-position: 0px 0px; background-repeat: no-repeat">
 									<f:facet name="header">Preço</f:facet>
@@ -57,7 +58,7 @@
 									</p:outputLabel>
 								</p:panel>
 							</div>
-							<div class="ui-g-12 ui-md-6 ui-lg-4">
+							<div class="ui-g-12 ui-md-6 ui-lg-3">
 								<p:panel
 									style="height: 150px;text-align: center; background-image:url('/Shop/resources/images/t1.png'); background-size: 100% 165px; background-position: 0px 0px; background-repeat: no-repeat"
 									rendered="#{not empty product.brand}">
@@ -68,22 +69,22 @@
 									</p:outputLabel>
 								</p:panel>
 							</div>
-							<div class="ui-g-12 ui-md-6 ui-lg-4">
+							<div class="ui-g-12 ui-md-6 ui-lg-3">
 								<p:panel
 									style="height: 150px;text-align: center; background-image:url('/Shop/resources/images/t1.png'); background-size: 100% 165px; background-position: 0px 0px; background-repeat: no-repeat">
 									<f:facet name="header">Loja</f:facet>
 									<p:graphicImage
 										url="https://darwin.affiliatewindow.com/images/upload/zanox/merchant/profile/#{product.programId}.png?1393598179"
-										style="max-height: 52px; max-width: 170px; position: relative; top: 4px; left: -17px"></p:graphicImage>
+										style="max-height: 50px; max-width: 163px; position: relative; top: 2px; left: -18px"></p:graphicImage>
 								</p:panel>
 							</div>
-							<div class="ui-g-12 ui-md-6 ui-lg-4">
+							<div class="ui-g-12 ui-md-6 ui-lg-3">
 								<p:panel style="text-align: center; padding: 14px">
 									<f:facet name="header">
 									</f:facet>
 									<p:link href="#{product.link}" class="button"
-										style="color: white;box-shadow: 2px 2px 2px #888888;height: 138px">
-										<h2 style="position: relative; top: 35px">Ir à loja</h2>
+										style="color: white;box-shadow: 2px 2px 2px #888888;height: 115px">
+										<h2 style="position: relative; top: 25px">Ir à loja</h2>
 									</p:link>
 								</p:panel>
 							</div>
