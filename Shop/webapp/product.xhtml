@@ -30,27 +30,25 @@
 					<div class="ui-g" style="padding: 0px">
 						<div class="ui-g-12 ui-md-12 ui-lg-6">
 							<p:panel
-								style="height: 385px;text-align: center; background-image:url('/Shop/resources/images/t1.png'); background-size: 140% 140%; background-position: -60px -57px; background-repeat: no-repeat">
-								<img src="#{product.image}"
-									style="text-align: center; height: 250px; max-width: 250px; position: relative; top: 10px; padding: 20px"
-									alt="#{product.name}"
-									onerror="this.src='/Shop/resources/images/no-image.png'" />
-							</p:panel>
-						</div>
-						<div class="ui-g-12 ui-md-12 ui-lg-6">
-							<p:panel
 								style="height: 385px;text-align: center; background-image:url('/Shop/resources/images/t2.png'); background-size: 100% 100%; background-position: 0px 0px; background-repeat: no-repeat">
 								<f:facet name="header">Produto</f:facet>
 								<p:outputLabel>
-									<h2
-										style="color: black; font-weight: bold; font-style: italic; position: relative; left: 40%; width: 60%">#{product.name}</h2>
+									<h1
+										style="color: black; font-weight: bold; font-style: italic; position: relative; left: 40%; width: 60%">#{product.name}</h1>
 								</p:outputLabel>
+							</p:panel>
+						</div>
+						<div class="ui-g-12 ui-md-12 ui-lg-4">
+							<p:panel style="height: 385px; text-align:center;">
+								<img src="#{product.image}"
+									style="text-align: center; max-height: 365px; max-width: 365px; width:100%" alt="#{product.name}"
+									onerror="this.src='/Shop/resources/images/no-image.png'" />
 							</p:panel>
 						</div>
 
 					</div>
 					<div class="ui-g" style="padding: 0px">
-						<div class="ui-g-12 ui-md-6 ui-lg-3">
+						<div class="ui-g-12 ui-md-6 ui-lg-2">
 							<p:panel
 								style="height: 150px; text-align: center; background-image:url('/Shop/resources/images/t1.png'); background-size: 100% 165px; background-position: 0px 0px; background-repeat: no-repeat">
 								<f:facet name="header">Preço</f:facet>
@@ -59,7 +57,7 @@
 								</p:outputLabel>
 							</p:panel>
 						</div>
-						<div class="ui-g-12 ui-md-6 ui-lg-3">
+						<div class="ui-g-12 ui-md-6 ui-lg-2">
 							<p:panel
 								style="height: 150px;text-align: center; background-image:url('/Shop/resources/images/t1.png'); background-size: 100% 165px; background-position: 0px 0px; background-repeat: no-repeat"
 								rendered="#{not empty product.brand}">
@@ -70,7 +68,7 @@
 								</p:outputLabel>
 							</p:panel>
 						</div>
-						<div class="ui-g-12 ui-md-6 ui-lg-3">
+						<div class="ui-g-12 ui-md-6 ui-lg-2">
 							<p:panel
 								style="height: 150px;text-align: center; background-image:url('/Shop/resources/images/t1.png'); background-size: 100% 165px; background-position: 0px 0px; background-repeat: no-repeat">
 								<f:facet name="header">Loja</f:facet>
@@ -79,7 +77,7 @@
 									style="max-height: 50px; max-width: 163px; position: relative; top: 2px; left: -18px"></p:graphicImage>
 							</p:panel>
 						</div>
-						<div class="ui-g-12 ui-md-6 ui-lg-3">
+						<div class="ui-g-12 ui-md-6 ui-lg-4">
 							<p:panel style="text-align: center; padding: 14px">
 								<f:facet name="header">
 								</f:facet>
